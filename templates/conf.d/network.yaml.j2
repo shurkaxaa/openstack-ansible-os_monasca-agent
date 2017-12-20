@@ -7,7 +7,7 @@ instances:
     excluded_interface_re: lo.*|vnet.*|tun.*|ovs.*|tap.*|qbr.*|qvb.*|qvo.*|.*_eth.*
     name: network_stats
     dimensions:
-{% if inventory_hostname in groups['all_containers'] %}
+{% if inventory_hostname in groups['all_containers']|default([]) %}
       node_type: container
       physical_host: {{ physical_host }}
 {% elif inventory_hostname in groups['hosts'] %}
