@@ -4,7 +4,7 @@ init_config: null
 
 instances:
   - built_by: Kafka
-    kafka_connect_str: {{ ansible_host }}:9092
+    kafka_connect_str: {{ kafka_connect_str }}:9092
     per_partition: True
     full_output: True
     consumer_groups:
